@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: auto;
-}
-
 h2 {
   color: rgb(238, 104, 104);
   text-transform: uppercase;
