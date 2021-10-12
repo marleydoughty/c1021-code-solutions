@@ -10,7 +10,8 @@ var orderHistory = [
       type: 'book',
       title: 'javaScript for impatient programmers',
       author: 'Dr. Axel Raschmayer',
-      price: 31.55
+      price: 31.55,
+      productImage: ''
     }]
   },
   {
@@ -24,7 +25,8 @@ var orderHistory = [
       type: 'book',
       title: 'The Timeless Way of Building',
       author: 'Christopher Alexander',
-      price: 41.33
+      price: 41.33,
+      productImage: ''
     }]
   },
   {
@@ -35,8 +37,10 @@ var orderHistory = [
     deliveryDate: 'July 7th, 2020',
     returnWindow: 'August 5th, 2020',
     itemDescription: [{
-      type: 'Gamecube Controller adapter',
-      price: 15.98
+      type: 'electronic',
+      title: 'Gamecube Controller adapter',
+      price: 15.98,
+      productImage: ''
     }]
   },
   {
@@ -47,14 +51,17 @@ var orderHistory = [
     deliveryDate: 'July 5h, 2020',
     returnWindow: 'August 4th, 2020',
     itemDescription: [{
-      type: 'GameCube controller',
-      price: 94.95
+      type: 'electronic',
+      title: 'GameCube controller',
+      price: 94.95,
+      productImage: ''
     },
     {
       type: 'book',
       title: 'The Art of SQL',
       author: 'Stephane Faroult',
-      price: 33.99
+      price: 33.99,
+      productImage: ''
     }]
   }
 
