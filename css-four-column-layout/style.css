@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: 'Barlow', sans-serif;
+  background-color: #f7f8fa;
+}
+
+.row {
+  display: flex;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.icon {
+  width: 70px;
+}
+
+.col-one-fourth {
+  text-align: center;
+}
+
+.image-screen {
+  width: 250px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+}
+
+h3 {
+  font-size: 16px;
+  color: black;
+}
+
+p {
+  font-size: 13px;
+  line-height: 60px;
+  opacity: 0.5;
+}
+
+h2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}
