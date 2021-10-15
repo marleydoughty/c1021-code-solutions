@@ -1,6 +1,4 @@
 .container {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   font-family: 'Barlow', sans-serif;
   background-color: #f7f8fa;
@@ -19,15 +17,19 @@
 }
 
 .col-one-fourth {
-  text-align: center;
   width: 25%;
+}
+
+.text-align {
+  text-align: center;
 }
 
 .image-screen {
   width: 250px;
   padding-left: 25px;
   padding-right: 25px;
-  display: flex;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 h3 {
@@ -37,8 +39,10 @@ h3 {
 
 p {
   font-size: 13px;
-  line-height: 60px;
-  opacity: 0.5;
+  line-height: 50px;
+  color: black;
+  font-weight: 600;
+  opacity: 0.75;
 }
 
 h2 {
