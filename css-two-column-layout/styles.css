@@ -18,10 +18,6 @@
   width: 50%;
 }
 
-.column-one-half.row {
-  flex-wrap: nowrap;
-}
-
 h1 {
   text-align: center;
   text-transform: uppercase;
