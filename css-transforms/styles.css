@@ -39,10 +39,15 @@ button:active {
   transform: translateY(0.25rem);
 }
 
-/* img:first-child {
+/* body img:first-of-type {
   transform: rotate(-30deg);
 } */
 
 /* img:last-child {
   transform: rotate(30deg);
 } */
+
+/* .pokeball:first-of-type {
+  transform: rotate(-30deg); */
+
+/* } */
