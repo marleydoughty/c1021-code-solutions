@@ -12,17 +12,17 @@ function incrementClick() {
   $clickCount.textContent = 'Clicks: ' + counter;
   counter++;
   if (counter < 4) {
-    $hotButton.classList.add('cold');
+    $hotButton.className = 'hot-button cold';
   } else if (counter >= 4 || counter < 7) {
-    $hotButton.classList.add('cool');
+    $hotButton.className = 'hot-button cool';
   } else if (counter >= 7 || counter < 10) {
-    $hotButton.classList.add('tepid');
+    $hotButton.className = 'hot-button tepid';
   } else if (counter >= 10 || counter < 13) {
-    $hotButton.classList.add('warm');
+    $hotButton.className = 'hot-button warm';
   } else if (counter >= 13 || counter < 16) {
-    $hotButton.classList.add('hot');
+    $hotButton.className = 'hot-button hot';
   } else {
-    $hotButton.classList.add('nuclear');
+    $hotButton.className = 'hot-button nuclear';
   }
 }
 $hotButton.addEventListener('click', incrementClick);
