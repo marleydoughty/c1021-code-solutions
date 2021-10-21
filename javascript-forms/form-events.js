@@ -14,22 +14,30 @@ use variable for addEventListener */
 logs "event.target.name";
 logs "event.target.value";
 use variable for addEventListener */
+var $userName = document.querySelector('#user-name');
+var $email = document.querySelector('#user-email');
+var $message = document.querySelector('#user-message');
 
 function handleFocus(event) {
   console.log('focus event fired:', event);
   console.log('event.target.name:', event.target.name);
 }
-var $userName = document.querySelector('#user-name');
 $userName.addEventListener('focus', handleFocus);
+$email.addEventListener('focus', handleFocus);
+$message.addEventListener('focus', handleFocus);
 
 function handleBlur(event) {
   console.log('blur event fired:', event);
   console.log('event.target.name:', event.target.name);
 }
 $userName.addEventListener('blur', handleBlur);
+$email.addEventListener('blur', handleFocus);
+$message.addEventListener('blur', handleFocus);
 
 function handleInput(event) {
   console.log('event.target.name:', event.target.name);
   console.log('event.target.value:', event.target.value);
 }
 $userName.addEventListener('input', handleInput);
+$email.addEventListener('input', handleFocus);
+$message.addEventListener('input', handleFocus);
