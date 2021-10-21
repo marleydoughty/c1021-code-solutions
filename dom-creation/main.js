@@ -56,19 +56,32 @@ var pokedex = [
     imageUrl: 'images/blastoise.png'
   }
 ];
+function renderPokemon(pokemon) {
+  var $column = document.createElement('div');
+  $column.className = 'column-third';
+  var $pokemonCard = document.createElement('div');
+  $pokemonCard.className = 'pokemon-card';
+  $column.appendChild($pokemonCard);
+  var $img = document.createElement('img');
+  $img.setAttribute('src', pokemon.imageUrl);
+  $pokemonCard.appendChild($img);
+  var $pokemonCardText = document.createElement('div');
+  $pokemonCardText.className = 'pokemon-card-text';
+  $pokemonCard.appendChild($pokemonCardText);
+  var $name = document.createElement('h2');
+  $name.textContent = pokemon.name;
+  $pokemonCardText.appendChild($name);
+  var $number = document.createElement('h3');
+  $number.textContent = pokemon.number;
+  $pokemonCardText.appendChild($number);
+  var $description = document.createElement('p');
+  $description.textContent = pokemon.description;
+  $pokemonCardText.appendChild($description);
+  return $column;
+}
+var row = document.querySelector('.row');
 
-// // function renderPokemon(pokemon) {
-// var firstDiv = document.createElement('div');
-// var secondDiv = document.createElement('div');
-// firstDiv.className = 'column-third';
-// secondDiv.className = 'pokemon-card';
-// firstDiv.appendChild(secondDiv);
-
-// var imgOne = document.createElement('img');
-// imgOne.setAttribute('src', 'imageURL');
-// secondDiv.appendChild(imgOne);
-
-// var thirdDiv = document.createElement('div');
-// thirdDiv.className = 'pokemon-card-text';
-// secondDiv.appendChild(thirdDiv);
-// // var heading = document.createElement('h2');
+for (var i = 0; i < pokedex.length; i++) {
+  var card = renderPokemon(pokedex[i]);
+  row.appendChild(card);
+}
