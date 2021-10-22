@@ -51,6 +51,11 @@ header nav .blue-button {
   margin-left: 18px;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -65,7 +70,7 @@ header nav .blue-button {
   flex-direction: column;
 }
 
-.row.hero-image {
+.hero-image {
   margin: 60px;
   position: relative;
   display: flex;
@@ -114,22 +119,17 @@ header nav .blue-button {
 
 .places {
   background: #fafafa;
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
   border-bottom: 1px solid #f2f4f5;
   padding: 30px;
   color: #6e6e6e;
-}
-
-.places .row {
-  display: flex;
-  justify-content: space-evenly;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 0;
   padding-right: 0;
+  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -151,10 +151,6 @@ header nav .blue-button {
   padding-bottom: 74px;
   padding-left: 60px;
   padding-right: 60px;
-}
-
-.bottom .row {
-  display: flex;
 }
 
 .bottom .column-one-half {
