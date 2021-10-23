@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div>
-      <button id="openModal">Open Modal</button>
-    </div>
-    <div class="row flex-column align-center">
-      <h2>Would you like to take a survey?</h2>
-      <button id="closeModal">No</button>
-    </div>
-    <script src="main.js"></script>
+      <div>
+        <button id="openModal">Open Modal</button>
+      </div>
+      <div class="modal-outer hidden">
+        <div class="modal-content ">
+          <h2>Would you like to take a survey?</h2>
+          <button id="closeModal">No</button>
+        </div>
+      </div>
+      <script src="main.js"></script>
   </body>
 </html>
