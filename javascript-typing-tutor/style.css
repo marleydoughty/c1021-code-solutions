@@ -1,0 +1,28 @@
+span {
+  border-bottom: 2px solid transparent;
+}
+
+.phrase {
+  height: 100vh;
+  font-family: 'PT Mono', monospace;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  border-bottom-color: black;
+}
+
+.correct {
+  color: rgb(43, 209, 43);
+}
+
+.incorrect {
+  color: red;
+}
+
+.active.incorrect {
+  border-bottom-color: red;
+}
