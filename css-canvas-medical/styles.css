@@ -60,6 +60,14 @@ header nav .blue-button {
   justify-content: space-between;
 }
 
+.text-align {
+  text-align: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
 .nav-item {
   color: #a7a7a7;
   font-size: 15px;
