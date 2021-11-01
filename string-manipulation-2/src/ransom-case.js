@@ -6,5 +6,6 @@ function ransomCase(string) {
   var newString = string.toLowerCase();
   for (var i = 1; i < string.length; i += 2) {
     newString = newString.substring(0, i) + newString[i].toUpperCase() + newString.substring(i + 1);
-  } return newString;
+  }
+  return newString;
 }

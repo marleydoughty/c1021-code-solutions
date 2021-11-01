@@ -12,5 +12,6 @@ function numVowels(string) {
     if (newString[i] === 'a' || newString[i] === 'e' || newString[i] === 'i' || newString[i] === 'o' || newString[i] === 'u') {
       vowelCount++;
     }
-  } return vowelCount;
+  }
+  return vowelCount;
 }
