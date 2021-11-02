@@ -65,7 +65,7 @@ header nav .blue-button {
 }
 
 .justify-content {
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .nav-item {
@@ -208,6 +208,18 @@ header nav .blue-button {
   line-height: 2;
 }
 
+.column-full {
+  width: 100%;
+}
+
 .column-full p {
   color: #6e6e6e;
+}
+
+.column-one-half p {
+  color: #6e6e6e;
+}
+
+p.address {
+  color: white;
 }
