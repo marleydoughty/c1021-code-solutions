@@ -1,0 +1,27 @@
+.row {
+  display: flex;
+}
+
+.container {
+  border: solid;
+  width: 1000px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.far {
+  margin: 5px;
+  padding-bottom: 20px;
+}
+
+img {
+  padding-left: 150px;
+  padding-right: 150px;
+  width: 350px;
+}
