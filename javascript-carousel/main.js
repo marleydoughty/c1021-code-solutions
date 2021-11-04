@@ -1,73 +1,45 @@
-var $container = document.querySelector('.container');
-// var leftArrow = document.querySelector('.fa-angle-left');
-// var rightArrow = document.querySelector('.fa-angle-right');
-// var circles = document.querySelectorAll('.fa-circle');
+// var $container = document.querySelector('.container');
+var leftArrow = document.querySelector('.fa-angle-left');
+var rightArrow = document.querySelector('.fa-angle-right');
 var image = document.querySelector('img');
+var $circleRow = document.querySelector('.circles');
+
+var allImages = ['images/001.png', 'images/004.png', 'images/007.png', 'images/025.png', 'images/039.png'];
+var currentImageIndex = 0;
 
 // function renderPokemonImage(entry) {
 
-var $row = document.createElement('div');
-$row.className = 'row justify-content align-center';
-$container.appendChild($row);
-
-var $leftArrow = document.createElement('i');
-$leftArrow.className = 'fas fa-angle-left';
-$row.appendChild($leftArrow);
-
-var $image = document.createElement('img');
-$image.setAttribute('src', event.target.value);
-$row.appendChild($image);
-
-var $rightArrow = document.createElement('i');
-$rightArrow.className = 'fas fa-angle-right';
-$row.appendChild($rightArrow);
-
-var $circleRow = document.createElement('div');
-$circleRow.className = 'row justify-content';
-$container.appendChild($circleRow);
-
-var $circle1 = document.createElement('i');
-$circle1.className = 'far fa-circle';
-$circleRow.appendChild($circle1);
-
-var $circle2 = document.createElement('i');
-$circle2.className = 'far fa-circle';
-$circleRow.appendChild($circle2);
-
-var $circle3 = document.createElement('i');
-$circle3.className = 'far fa-circle';
-$circleRow.appendChild($circle3);
-
-var $circle4 = document.createElement('i');
-$circle4.className = 'far fa-circle';
-$circleRow.appendChild($circle4);
-
-var $circle5 = document.createElement('i');
-$circle5.className = 'far fa-circle';
-$circleRow.appendChild($circle5);
+for (var i = 0; i < allImages.length; i++) {
+  var circles = document.createElement('i');
+  circles.className = 'far fa-circle';
+  $circleRow.appendChild(circles);
+}
+// }
+// $container.appendChild($circleRow);
 // return $container;
 // }
-// console.log(renderPokemonImage);
-// function handleLeftClick(event) {
-//   console.log('left-arrow-clicked', leftArrow);
-// }
-// function handleRightClick(event) {
-//   console.log('right-arrow-clicked', rightArrow);
 
-// }
-var counter = setInterval(automaticCarousel, 3000);
-// var count = 0;
-function automaticCarousel() {
-  image.setAttribute('src', 'images/001.png');
-  // image.setAttribute('src', 'images/004.png');
-  clearInterval(counter);
+function handleLeftClick(event) {
+  // console.log('left-arrow-clicked', leftArrow);
+}
+function handleRightClick(event) {
+  // console.log('right-arrow-clicked', rightArrow);
 
 }
+function handleCircleClicks(event) {
+  // console.log('cirles clicked');
+  circles.closest('.circles');
+}
+function automaticCarousel() {
+  image.setAttribute('src', nextImage());
+}
+setInterval(automaticCarousel, 3000);
 
-// function handleCircleClicks(event) {
-//   console.log('cirles clicked');
-// }
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % allImages.length;
+  return allImages[currentImageIndex];
+}
 
-// rightArrow.addEventListener('click', handleRightClick);
-// leftArrow.addEventListener('click', handleLeftClick);
-// circles.addEventListener('click', handleCircleClicks);
+rightArrow.addEventListener('click', handleRightClick);
+leftArrow.addEventListener('click', handleLeftClick);
+$circleRow.addEventListener('click', handleCircleClicks);
