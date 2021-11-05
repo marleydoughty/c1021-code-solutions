@@ -20,6 +20,14 @@ Account.prototype.withdraw = function (amount) {
     return false;
   }
 };
-Account.prototype.getBalance = function (amount) {
-
+Account.prototype.getBalance = function () {
+  var balance = 0;
+  for (var i = 0; i < this.transactions.length; i++) {
+    if (this.transactions[i].type === 'deposit') {
+      balance += this.transactions[i].amount;
+    } else {
+      balance -= this.transactions[i].amount;
+    }
+  }
+  return balance;
 };
