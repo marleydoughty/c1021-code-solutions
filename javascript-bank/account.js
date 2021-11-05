@@ -5,17 +5,19 @@ function Account(number, holder) {
   this.transactions = [];
 }
 Account.prototype.deposit = function (amount) {
-  if (amount < 0) {
-    return false;
-  } else {
+  if (Math.round(amount) === amount && amount > 0) {
+    this.transactions.push(new Transaction('deposit', amount));
     return true;
+  } else {
+    return false;
   }
 };
 Account.prototype.withdraw = function (amount) {
-  if (amount < 0) {
-    return false;
-  } else {
+  if (Math.round(amount) === amount && amount > 0) {
+    this.transactions.push(new Transaction('withdrawal', amount));
     return true;
+  } else {
+    return false;
   }
 };
 Account.prototype.getBalance = function (amount) {
