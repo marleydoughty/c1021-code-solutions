@@ -6,6 +6,5 @@
  * return the output
  */
 function reverseWords(string) {
-  // var output = [];
-
+  return string.split('').reverse().join('').split(' ').reverse().join(' ');
 }

@@ -1,15 +1,16 @@
 /* exported isAnagram */
 function isAnagram(firstString, secondString) {
-  if (firstString.length !== secondString.length) {
+  var string1 = firstString.replaceAll(' ', '');
+  var string2 = secondString.replaceAll(' ', '');
+  if (string1.length !== string2.length) {
     return false;
   } else {
-    // firstString.split('').sort().join('');
-    // secondString.split('').sort().join('');
-
-    var string1 = firstString.split('').sort().join('');
-    var string2 = secondString.split('').sort().join('');
-    if (string1 === string2) {
+    var string11 = string1.split('').sort().join('');
+    var string22 = string2.split('').sort().join('');
+    if (string11 === string22) {
       return true;
+    } else {
+      return false;
     }
   }
 }
