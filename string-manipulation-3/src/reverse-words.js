@@ -6,5 +6,17 @@
  * return the output
  */
 function reverseWords(string) {
-  return string.split('').reverse().join('').split(' ').reverse().join(' ');
+  var output = '';
+  var currentWord = '';
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] !== ' ') {
+      currentWord = string[i] + currentWord;
+    } else {
+      output += currentWord + ' ';
+      currentWord = '';
+      output += currentWord;
+
+    }
+  }
+  return output;
 }
