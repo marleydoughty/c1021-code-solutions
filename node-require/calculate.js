@@ -10,13 +10,12 @@ const thirdInput = Number(args[4]);
 
 if (secondInput === 'plus') {
   console.log('result:', add(firstInput, thirdInput));
-}
-if (secondInput === 'minus') {
+} else if (secondInput === 'minus') {
   console.log('result:', subtract(firstInput, thirdInput));
-}
-if (secondInput === 'times') {
+} else if (secondInput === 'times') {
   console.log('result:', multiply(firstInput, thirdInput));
-}
-if (secondInput === 'over') {
+} else if (secondInput === 'over') {
   console.log('result:', divide(firstInput, thirdInput));
+} else {
+  console.log('invalid operation');
 }
