@@ -1,4 +1,4 @@
-// const fs = require('fs');
+const fs = require('fs');
 const fileObj = require('./data.json');
 
 const args = process.argv;
@@ -11,11 +11,18 @@ const readCommand = () => {
     console.log(`${key}: ${value}`);
   }
 };
+const createCommand = () => {
+  fs.writeFile('./data.json', JSON.stringify(fileObj.notes) + '\n', err => {
+    if (err) {
+      console.log(err);
+    }
+  });
+};
 
 if (firstInput === 'read') {
   readCommand();
-// } else if (firstInput === 'create') {
-//   createCommand();
+} else if (firstInput === 'create') {
+  createCommand();
 // } else if (firstInput === 'update') {
 //   updateCommand();
 // } else if (firstInput === 'delete') {
