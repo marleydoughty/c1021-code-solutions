@@ -31,14 +31,23 @@ const updateCommand = () => {
   });
 };
 
+const deleteCommand = () => {
+  delete fileObj.notes[secondInput];
+  fs.writeFile('./data.json', JSON.stringify(fileObj, null, 2) + '\n', err => {
+    if (err) {
+      console.log(err);
+    }
+  });
+};
+
 if (firstInput === 'read') {
   readCommand();
 } else if (firstInput === 'create') {
   createCommand();
 } else if (firstInput === 'update') {
   updateCommand();
-// } else if (firstInput === 'delete') {
-//   deleteCommand();
-// } else {
-//   console.log('Invalid command');
+} else if (firstInput === 'delete') {
+  deleteCommand();
+} else {
+  console.log('Invalid command');
 }
