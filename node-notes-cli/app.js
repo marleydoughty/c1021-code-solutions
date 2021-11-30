@@ -3,7 +3,7 @@ const fileObj = require('./data.json');
 
 const args = process.argv;
 const firstInput = args[2];
-// const secondInput = args[3];
+const secondInput = args[3];
 // const thirdInput = args[4];
 
 const readCommand = () => {
@@ -12,7 +12,9 @@ const readCommand = () => {
   }
 };
 const createCommand = () => {
-  fs.writeFile('./data.json', JSON.stringify(fileObj.notes) + '\n', err => {
+  fileObj.notes[fileObj.nextId] = secondInput;
+  fileObj.nextId++;
+  fs.writeFile('./data.json', JSON.stringify(fileObj, null, 2) + '\n', err => {
     if (err) {
       console.log(err);
     }
