@@ -29,12 +29,10 @@ app.get('/api/grades', (req, res) => {
   res.json(gradesArray);
 });
 
-// app.delete('/api/grades/:id', (req, res) => {
-//   req.params.id = '/api/grades/:id';
-//   const id = req.params.id;
-//   delete grades[id];
-//   res.sendStatus(204);
-// });
+app.delete('/api/grades/:id', (req, res) => {
+  delete grades[req.params.id];
+  res.sendStatus(204);
+});
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
