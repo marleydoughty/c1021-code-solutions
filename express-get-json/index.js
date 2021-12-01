@@ -23,10 +23,13 @@ const grades = {
 };
 
 app.get('/api/grades', (req, res) => {
-  res.json(grades);
-  res.send('Got a grades API request');
+  const array = Object.keys(grades).map(key => {
+    return grades[key];
+  });
+  res.json(array);
 });
 
 app.listen(3000, () => {
-  // console.log('server is listening on port 3000');
+  // eslint-disable-next-line no-console
+  console.log('server is listening on port 3000');
 });
