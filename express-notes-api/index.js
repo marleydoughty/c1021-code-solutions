@@ -36,6 +36,7 @@ app.post('/api/notes', (req, res) => {
     notesObject.notes[body.id] = body;
     fs.writeFile('./data.json', JSON.stringify(notesObject, null, 2) + '\n', err => {
       if (err) {
+        console.error(err);
         res.status(500).json({ Error: 'An unexpected error occured' });
       } else {
         res.status(201).json(notesObject.notes[body.id]);
@@ -54,7 +55,8 @@ app.delete('/api/notes/:id', (req, res) => {
     delete notesObject.notes[deleteId];
     fs.writeFile('./data.json', JSON.stringify(notesObject, null, 2) + '\n', err => {
       if (err) {
-        throw res.status(500).json({ Error: 'An unexpected error occured' });
+        console.error(err);
+        res.status(500).json({ Error: 'An unexpected error occured' });
       } else {
         res.status(204).json({});
       }
@@ -75,6 +77,7 @@ app.put('/api/notes/:id', (req, res) => {
     notesObject.notes[updateId].content = body.content;
     fs.writeFile('./data.json', JSON.stringify(notesObject, null, 2) + '\n', err => {
       if (err) {
+        console.error(err);
         res.status(500).json({ Error: 'An unexpected error occured' });
       } else {
         res.status(201).json(notesObject.notes[updateId]);
