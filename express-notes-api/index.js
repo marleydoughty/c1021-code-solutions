@@ -2,8 +2,6 @@ const express = require('express');
 const notesObject = require('./data.json');
 const app = express();
 
-app.use(express.json());
-
 app.get('/api/notes', (req, res) => {
   const array = Object.keys(notesObject.notes).map(key => {
     return notesObject.notes[key];
@@ -12,6 +10,7 @@ app.get('/api/notes', (req, res) => {
   res.json(array);
 }
 );
+app.use(express.json());
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
