@@ -1,7 +1,10 @@
 /* exported unique */
 function unique(array) {
-  var newArray = array.filter(function (item, i, array) {
-    return array.indexOf(item) === i;
-  });
-  return newArray;
+  var output = [];
+  for (var i = 0; i < array.length; i++) {
+    if (!output.includes(array[i])) {
+      output.push(array[i]);
+    }
+  }
+  return output;
 }
