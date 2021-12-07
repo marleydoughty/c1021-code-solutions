@@ -23,18 +23,22 @@ app.get('/api/grades', (req, res, next) => {
 });
 
 app.post('/api/grades', (req, res, next) => {
+  const body = req.body;
+  const score = Number(body.score);
   const text = `insert into "grades"
                    ("name", "course", "score")
-            values ('$1', '$2', '$3')
+            values ($1, $2, $3)
             returning *`;
-  const values = ['Marley Doughty', 'Javascript', '69'];
+  const values = [body.name, body.course, score];
+  if (!body.name || !body.course || !body.score) {
+    res.status(400).json({ Error: 'All fields are required' });
+    return;
+  } else if (!Number.isInteger(score) || Number.isInteger(score) > 100) {
+    res.status(400).json({ Error: 'Score must be a positive integer between 0-100' });
+    return;
+  }
   db.query(text, values).then(result => {
-    const body = req.body;
-    if (!body.content) {
-      res.status(400).json({ Error: 'content is a required field' });
-    } else {
-      res.status(201).json(body);
-    }
+    res.status(201).json(result.rows[0]);
   }).catch(err => {
     console.error(err);
     res.status(500).json({ Error: 'An unexpected error occurred' });
