@@ -45,6 +45,29 @@ app.post('/api/grades', (req, res, next) => {
   });
 });
 
+app.put('/api/grades/:gradeId', (req, res, next) => {
+  const gradeId = Number(req.params.gradeId);
+  const body = req.body;
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    res.status(400).json({ Error: 'Invalid gradeId' });
+  } else if (Number.isInteger(gradeId) || !body.name || !body.course || !body.score) {
+    res.status(400).json({ Error: 'All fields are required' });
+  } else if (!gradeId) {
+    res.status(404).json({ Error: `Cannot find grade with "gradeId" ${gradeId}` });
+  }
+  const sql = `select "gradeId",
+                      "name",
+                      "course",
+                      "score"
+                      "createdAt"
+              from  "grades"
+              where "gradeId" = $1`;
+  const params = [gradeId];
+  db.query(sql, params).then(result => {
+    res.status(200).json({});
+  });
+});
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('server is listening on port 3000');
