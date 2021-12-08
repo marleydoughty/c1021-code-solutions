@@ -1,0 +1,188 @@
+    1  exit
+    2  whoami
+    3  git config --global user.name "Marley Doughty"
+    4  git config --global user.email "marleydoughty@yahoo.com"
+    5  git config --global --list
+    6  exit
+    7  cd ~/repos/c1021-code-solutions/
+    8  git switch master
+    9  git pull origin master
+   10  git branch http-messages
+   11  git branch --list
+   12  cd http-messages
+   13  git switch http-messages
+   14  http http://www.example.com
+   15  http --verbose http://www.example.com
+   16  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+   17  http --body GET https://example.com > index.html
+   18  git status
+   19  git add ./
+   20  git status
+   21  git commit -m "ran commands and added files to http-messages directory"
+   22  git push origin http-messages
+   23  cd
+   24  cd ~/repos/c1021-code-solutions
+   25  git switch master
+   26  git pull origin master
+   27  git status
+   28  git branch javascript-ajax
+   29  git branch --list
+   30  git switch javascript-ajax
+   31  git status
+   32  git add javascript-ajax
+   33  git status
+   34  git commit -m "completed javascript-ajax"
+   35  git push origin javascript-ajax
+   36  git switch javascript-bank
+   37  git switch master
+   38  git pull origin master
+   39  git switch javascript-bank
+   40  git status
+   41  git add javascript-bank/bank.js
+   42  git status
+   43  git commit -m "working on bank portion"
+   44  git switch master
+   45  exit
+   46  whoami
+   47  http https://api.thedogapi.com/v1/breeds
+   48  exit
+   49  http https://api.thedogapi.com/v1/images
+   50  http https://api.thedogapi.com/v1/images/ x-api-key:12f0bb87-ddee-4a05-9004-2387e05d2578
+   51  http https://api.thedogapi.com/v1/images x-api-key:12f0bb87-ddee-4a05-9004-2387e05d2578
+   52  http https://api.thedogapi.com/v1/images/search x-api-key:12f0bb87-ddee-4a05-9004-2387e05d2578
+   53  http https://api.thedogapi.com/v1/images/search?limit=100&page=0 x-api-key:12f0bb87-ddee-4a05-9004-2387e05d2578
+   54  http https://api.thedogapi.com/v1/images/search limit==100 page==0 x-api-key:12f0bb87-ddee-4a05-9004-2387e05d2578
+   55  http https://api.thecatapi.com/v1/images/search?limit=100&page=0
+   56  http https://cat-fact.herokuapp.com/facts
+   57  lear
+   58  clear
+   59  cd ~/repos/c1021-code-solutions/
+   60  git pull origin master
+   61  git switch javascript-bank
+   62  git status
+   63  git add javascript-bank/bank.js
+   64  git status
+   65  git commit -m "completed javascript-bank"
+   66  git push origin javascript-bank
+   67  git switch master
+   68  git pull origin master
+   69  git branch --list
+   70  git switch object-manipulation-2
+   71  git status
+   72  whoami
+   73  cd ~/repos/c1021-code-solutions/
+   74  git branch command-line-basics
+   75  git branch --list
+   76  cd
+   77  command-line-basics
+   78  cd ~repos/c1021-code-solutions
+   79  cd ~/repos/c1021-code-solutions
+   80  git switch command-line-basics
+   81  git switch master
+   82  cd command-line-basics
+   83  pwd
+   84  man man
+   85  man cat
+   86  cat laziness.txt
+   87  cat impatience.txt
+   88  cat hubris.txt
+   89  cat laziness.txt impatience.txt hubris.txt
+   90  cat laziness.txt impatience.txt hubris.txt >three.virtues.txt
+   91  cat three.virtues.txt
+   92  man ls
+   93  ls
+   94  ls -a
+   95  ls -F
+   96  ls lfz-staff
+   97  ls lfz-staff -a
+   98  ls lfz-staff -F
+   99  ls lfz-staff/contents.txt
+  100  ls lfz-staff
+  101  ls -aF lfz-staff > lfz-staff/contents.txt
+  102  cat lfz-staff/contents.txt
+  103  man pwd
+  104  pwd
+  105  pwd >i-was-here.txt
+  106  ls
+  107  cat i-was-here.txt
+  108  cat hubris.txt
+  109  cat i-was-here.txt
+  110  man echo
+  111  echo 'Hello, World!'
+  112  echo 'Hello, World!' > hello.txt
+  113  ls
+  114  cat hello.txt
+  115  man touch
+  116  touch  tag-youre-it.txt
+  117  ls
+  118  man touch
+  119  cat tag-youre-it.txt
+  120  ls
+  121  ls snoot
+  122  touch snoot > boop.txt
+  123  ls
+  124  cat snoot
+  125  ls snoot
+  126  touch snoot
+  127  touch boop.txt > snoot
+  128  ls snoot
+  129  cat snoot
+  130  touch boop.txt > snoot
+  131  ls
+  132  man touch
+  133  ls snoot/
+  134  ls
+  135  touch boop.txt > snoot/
+  136  ls snoot
+  137  touch snoot/boop.txt
+  138  ls snoot
+  139  cat snoot
+  140  ls snoot
+  141  man mkdir
+  142  mkdir parent
+  143  ls 
+  144  mkdir -p
+  145  mkdir -p parent/child/grandchild
+  146  ls
+  147  ls parent
+  148  ls child
+  149  ls parent/child
+  150  touch parent/child/grandchild/.gitkeep
+  151  ls -a
+  152  ls -a .
+  153  ls -a .gitkeep
+  154  ls parent/child/grandchild
+  155  ls parent/child/grandchild/
+  156  ls -a  parent/child/grandchild/
+  157  man mv
+  158  mv pokkiemans 
+  159  mv pokkiemans > pokemon
+  160  mv pokiemans
+  161  mv pokiemans > pokemon
+  162  mv /pokiemans /pokemon
+  163  pokimans pokemon
+  164  pokiemans pokemon
+  165  mv pokiemans pokemon
+  166  man mv
+  167  ls pokiemans
+  168  mv pokiemans pokemon
+  169  cat pokiemans
+  170  ls pokiemans
+  171  pwd
+  172  ls
+  173  cat pokemon
+  174  ls
+  175  rm pokemon
+  176  ls
+  177  mv pokiemans pokemon
+  178  ls
+  179  man rm
+  180  rm lol.txt
+  181  ls
+  182  man cp
+  183  cp and-then.txt no-and-then.txt
+  184  ls
+  185  cat and-then.txt no-and-then.txt
+  186  man history
+  187  history
+  188  history > command-history.txt
