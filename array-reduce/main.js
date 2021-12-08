@@ -16,12 +16,26 @@ const traits = [
   { level: 15 },
   { trainer: 'ash' }
 ];
-const sum = numbers.reduce((initialValue, currentValue) => {
-  return initialValue + currentValue;
-});
+const sum = numbers.reduce((prev, curr) => {
+  return prev + curr;
+}, 0);
 console.log('sum:', sum);
 
-const product = numbers.reduce((initialValue, currentValue) => {
-  return initialValue * currentValue;
-});
+const product = numbers.reduce((prev, curr) => {
+  return prev * curr;
+}, 1);
 console.log('product:', product);
+
+const balance = account.reduce((prev, curr) => {
+  if (curr.type === 'deposit') {
+    return curr.amount + prev;
+  } else {
+    return prev - curr.amount;
+  }
+}, 0);
+console.log('balance:', balance);
+
+const composite = traits.reduce((prev, curr) => {
+  return Object.assign(prev, curr);
+}, {});
+console.log('composite:', composite);
