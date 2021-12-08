@@ -54,11 +54,8 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
   if (!Number.isInteger(gradeId) || gradeId <= 0 || gradeId > 100) {
     res.status(400).json({ Error: 'Invalid gradeId' });
     return;
-  } else if (gradeId && !name && !course && !score) {
+  } else if (!name || !course || !score) {
     res.status(400).json({ Error: 'All fields are required' });
-    return;
-  } else if (!gradeId) {
-    res.status(404).json({ Error: `Cannot find grade with "gradeId" ${gradeId}` });
     return;
   }
   const sql = `update "grades"
@@ -69,6 +66,10 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
               returning *`;
   const updateValues = [name, course, score, gradeId];
   db.query(sql, updateValues).then(result => {
+    if (!result.rows[0]) {
+      res.status(404).json({ Error: `Cannot find grade with "gradeId" ${gradeId}` });
+      return;
+    }
     res.status(200).json(result.rows[0]);
   }).catch(err => {
     console.error(err);
@@ -78,7 +79,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
 
 app.delete('/api/grades/:gradeId', (req, res, next) => {
   const deleteId = Number(req.params.gradeId);
-  if (!Number(deleteId)) {
+  if (!Number.isInteger(deleteId)) {
     res.status(400).json({ Error: 'Invalid gradeId' });
     return;
   }
