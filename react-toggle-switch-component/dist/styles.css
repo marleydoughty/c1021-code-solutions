@@ -1,0 +1,47 @@
+
+.toggleTrack {
+  width: 50px;
+  height: 25px;
+  border: solid;
+  border-radius: 25px;
+  margin-right: 6px;
+}
+
+.toggleBall {
+  border-radius: 50%;
+  border: solid;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 3px;
+  background-color: white;
+}
+
+.toggleOuter.on .toggleTrack {
+  background-color: green;
+}
+
+.toggleOuter.off .toggleTrack {
+  background-color: grey;
+}
+
+.toggleOuter.on .toggleBall {
+  right: 8px;
+}
+
+.toggleOuter.off .toggleBall {
+  left: 3px;
+}
+
+.toggleOuter {
+  position: relative;
+}
+
+.toggleOuter :hover {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
