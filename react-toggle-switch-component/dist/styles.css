@@ -7,38 +7,38 @@
   margin-right: 6px;
 }
 
-.on {
+.toggleBall {
+  border-radius: 50%;
+  border: solid;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 3px;
+  background-color: white;
+}
+
+.toggleOuter.on .toggleTrack {
   background-color: green;
 }
 
-.off {
+.toggleOuter.off .toggleTrack {
   background-color: grey;
 }
 
-.toggleBallOn {
-  border-radius: 50%;
-  border: solid;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  bottom: 3px;
+.toggleOuter.on .toggleBall {
   right: 8px;
-  background-color: white;
 }
 
-.toggleBallOff {
-  border-radius: 50%;
-  border: solid;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  bottom: 3px;
+.toggleOuter.off .toggleBall {
   left: 3px;
-  background-color: white;
 }
 
 .toggleOuter {
   position: relative;
+}
+
+.toggleOuter :hover {
+  cursor: pointer;
 }
 
 .flex {
