@@ -11,6 +11,7 @@ class Stopwatch extends React.Component {
     this.handleStartTimer = this.handleStartTimer.bind(this);
     this.addToTimer = this.addToTimer.bind(this);
     this.handleStopTimer = this.handleStopTimer.bind(this);
+    this.handleClearTimer = this.handleClearTimer.bind(this);
   }
 
   addToTimer() {
@@ -29,9 +30,17 @@ class Stopwatch extends React.Component {
   handleStopTimer() {
     clearInterval(this.incrementor);
     this.setState({
-      isRunning: false,
-      timeElapsed: 0
+      isRunning: false
     });
+  }
+
+  handleClearTimer() {
+    if (!this.state.isRunning) {
+      this.setState({
+        isRunning: false,
+        timeElapsed: 0
+      });
+    }
   }
 
   render() {
@@ -43,7 +52,7 @@ class Stopwatch extends React.Component {
     }
     return (
       <div className='container'>
-        <div className='outer'>
+        <div onClick={this.handleClearTimer} className='outer'>
           <div className='inner'>{this.state.timeElapsed}</div>
         </div>
         {button}
