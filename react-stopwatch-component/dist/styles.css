@@ -1,0 +1,9 @@
+.outer {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
