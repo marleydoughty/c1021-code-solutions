@@ -1,5 +1,6 @@
-* {
-  margin: 0;
+
+.hidden {
+  display: none;
 }
 
 .menu-bar {
@@ -11,25 +12,32 @@
   cursor: pointer;
 }
 
-.slide-drawer {
-  height: 100%;
-  background: white;
+.drawer-outer {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.drawer-content {
+  height: 100%;
+  background: white;
   width: 33%;
-  box-shadow: 1px 0 7px rgba(0, 0, 0, 0.5);
-}
-
-.slide-drawer.open {
-  transform: translate(0);
-}
-
-.hidden {
-  display: none;
+  box-shadow: 1px 0 7px rgba(0, 0, 0, 0.75);
 }
 
 nav {
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+a {
+  padding-top: 12px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
 }
