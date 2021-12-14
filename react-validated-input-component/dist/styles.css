@@ -18,14 +18,14 @@ p {
   padding-top: 3px;
 }
 
-.fas {
+i {
   margin-left: 10px;
 }
 
-.fas.fa-check {
+.valid {
   color: green;
 }
 
-.fas.fa-times {
+.invalid {
   color: red;
 }

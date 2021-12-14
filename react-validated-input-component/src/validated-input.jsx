@@ -16,12 +16,12 @@ class ValidateInput extends React.Component {
     let icon;
     if (!this.state.value) {
       errMsg = <p>A password is required</p>;
-      icon = <i className='fas fa-times'></i>;
+      icon = <i className='fas fa-times invalid'></i>;
     } else if (this.state.value.length < 8) {
       errMsg = <p>Your password is too short</p>;
-      icon = <i className='fas fa-times'></i>;
+      icon = <i className='fas fa-times invalid'></i>;
     } else {
-      icon = <i className='fas fa-check'></i>;
+      icon = <i className='fas fa-check valid'></i>;
     }
     return (
       <>
