@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+}
+
+.menu-bar {
+  font-size: 25px;
+  margin: 15px;
+}
+
+.menu-bar :hover {
+  cursor: pointer;
+}
+
+.slide-drawer {
+  height: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33%;
+  box-shadow: 1px 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.slide-drawer.open {
+  transform: translate(0);
+}
+
+.hidden {
+  display: none;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
