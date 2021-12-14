@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.subject,
+.description {
+  border: 1px solid black;
+  width: 500px;
+  border-radius: 3px;
+}
+
+.subject {
+  font-size: 28px;
+  cursor: pointer;
+  background-color: grey;
+  text-align: center;
+}
+
+.description {
+  font-size: 18px;
+}
