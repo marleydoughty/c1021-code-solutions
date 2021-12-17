@@ -69,13 +69,15 @@ export default class App extends React.Component {
       },
       body: JSON.stringify(updateTodo)
     })
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
         const newTodo = [...this.state.todos];
+
         this.setState({
           todos: newTodo
         });
-      });
+      })
+      .catch(err => console.error('Error!', err));
   }
 
   render() {
