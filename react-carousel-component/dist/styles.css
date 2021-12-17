@@ -1,10 +1,11 @@
 .row {
   display: flex;
+  justify-content: center;
 }
 
 .container {
   border: solid;
-  width: 1000px;
+  width: 800px;
 }
 
 img {
