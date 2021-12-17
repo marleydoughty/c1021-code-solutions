@@ -63,16 +63,16 @@ export default class App extends React.Component {
     const updateTodo = { isCompleted: !targetIndex.isCompleted };
 
     fetch(`/api/todos/${todoId}`, {
-      method: 'patch',
+      method: 'PATCH',
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(updateTodo)
     })
       .then(response => response.json())
       .then(data => {
         const newTodo = [...this.state.todos];
-
+        newTodo.splice(index, 1, data);
         this.setState({
           todos: newTodo
         });
