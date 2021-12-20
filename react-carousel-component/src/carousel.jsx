@@ -9,7 +9,6 @@ class Carousel extends React.Component {
     this.leftClick = this.leftClick.bind(this);
     this.rightClick = this.rightClick.bind(this);
     this.dotClick = this.dotClick.bind(this);
-    // this.handleInterval = this.handleInterval.bind(this);
   }
 
   leftClick() {
@@ -25,12 +24,6 @@ class Carousel extends React.Component {
   dotClick() {
     this.setState({ currentImgIndex: Number(event.target.id) });
   }
-
-  // handleInterval() {
-  //   this.interval = setInterval(() => {
-  //     this.rightClick();
-  //   }, 3000);
-  // }
 
   render() {
     return (
