@@ -9,34 +9,28 @@ class Carousel extends React.Component {
     this.leftClick = this.leftClick.bind(this);
     this.rightClick = this.rightClick.bind(this);
     this.dotClick = this.dotClick.bind(this);
-    this.handleInterval = this.handleInterval.bind(this);
+    // this.handleInterval = this.handleInterval.bind(this);
   }
 
   leftClick() {
-    if (this.state.currentImgIndex === 0) {
-      this.setState({ currentImgIndex: this.props.imageUrl.length - 1 });
-    } else {
-      this.setState({ currentImgIndex: this.state.currentImgIndex - 1 });
-    }
+    this.setState(
+      { currentImgIndex: (this.state.currentImgIndex - 1 + this.props.imageUrl.length) % this.props.imageUrl.length });
   }
 
   rightClick() {
-    if (this.state.currentImgIndex === this.props.imageUrl.length - 1) {
-      this.setState({ currentImgIndex: 0 });
-    } else {
-      this.setState({ currentImgIndex: this.state.currentImgIndex + 1 });
-    }
+    this.setState(
+      { currentImgIndex: (this.state.currentImgIndex + 1) % this.props.imageUrl.length });
   }
 
   dotClick() {
     this.setState({ currentImgIndex: Number(event.target.id) });
   }
 
-  handleInterval() {
-    this.interval = setInterval(() => {
-      this.rightClick();
-    }, 3000);
-  }
+  // handleInterval() {
+  //   this.interval = setInterval(() => {
+  //     this.rightClick();
+  //   }, 3000);
+  // }
 
   render() {
     return (
