@@ -33,7 +33,7 @@ class Carousel extends React.Component {
   }
 
   handleInterval() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.rightClick();
     }, 3000);
   }
