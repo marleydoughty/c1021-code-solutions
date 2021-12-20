@@ -1,0 +1,27 @@
+User can Sign-up:
+for a user to sign-up it starts in the index.js file
+If the user is not signing-in then they will have to register an account.
+When hitting the register button, then the AuthForm component will run which has a form input for a username and password.
+The username and password will be rendered from the AuthForm component, but before that then in index.js the post method is called.
+Before rendoring and creating an account, the post method checks to see if the username and password fields were filled out
+  if either fields are missing, then everything is haulted and the nearest middleware function (app.use(errorMiddleware)) is called.
+  if the error is an instance of a ClientError- then the ClientError component is called with a 400 status message.
+  if the fields are filled out then the password is hashed and that information is saved in the database.
+
+User Can Sign-in:
+After creating an account, the user can sign in- in index.js the post method is called and if the username and password fields are NOT filled out
+or NOT valid entries then the rest of the method is haulted and the ClientError function is called with a 401 status and message of "invalid login"
+  if the fields are filled out but the password does not match any of the passwords in the database, then evrything is haulted and the ClientError
+  function is called with a 401 status and message of 'invalid login'.
+  if any other errors occurred that are not related to username or password entry, then the nearest middleware function is called and results in a
+  500 status and error message of 'unexpected error occurred'
+if signing-in was successful:
+  the user is granted an access token and can access their account.
+
+User can stay signed-in after refreshing:
+in app.jsx, the handleSignIn method is called and sets the access token to local storage with the window.localstorage.setItem and then the componentDidMount method is called
+and gets it and checks for it.
+
+User can sign-out:
+in app.jsx the handleSignOut method is called and the window.localstorage.removeItem is called and then the user state is set to null, meaning no
+user is logged in.
