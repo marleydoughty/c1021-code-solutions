@@ -4,20 +4,57 @@ class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      isRunning: false,
-      timeElapsed: 0
+      currentImgIndex: 0
     });
+    this.leftClick = this.leftClick.bind(this);
+    this.rightClick = this.rightClick.bind(this);
+    this.dotClick = this.dotClick.bind(this);
+    this.handleInterval = this.handleInterval.bind(this);
+  }
+
+  leftClick() {
+    if (this.state.currentImgIndex === 0) {
+      this.setState({ currentImgIndex: this.props.imageUrl.length - 1 });
+    } else {
+      this.setState({ currentImgIndex: this.state.currentImgIndex - 1 });
+    }
+  }
+
+  rightClick() {
+    if (this.state.currentImgIndex === this.props.imageUrl.length - 1) {
+      this.setState({ currentImgIndex: 0 });
+    } else {
+      this.setState({ currentImgIndex: this.state.currentImgIndex + 1 });
+    }
+  }
+
+  dotClick() {
+    this.setState({ currentImgIndex: Number(event.target.id) });
+  }
+
+  handleInterval() {
+    setInterval(() => {
+      this.rightClick();
+    }, 3000);
   }
 
   render() {
     return (
-      <div className='container row'>
-        <img src=""></img>
-        <i className='fas fa-chevron'></i>
-        <i className='fas fa-chevron'></i>
-        <i className='fas fa-chevron'></i>
-        <i className='fas fa-chevron'></i>
-        <i className='fas fa-chevron'></i>
+      <div className='container'>
+        <div className='row'>
+          {this.props.imageUrl.map((image, index) => (
+            <div key={index} className={this.state.currentImgIndex === index ? 'row' : 'hidden'}>
+              <div><i onClick={this.leftClick} className='fas fa-chevron-left fa-3x left'></i></div>
+              <div className='image-container'><img src={image}></img></div>
+              <div><i onClick={this.rightClick} className='fas fa-chevron-right fa-3x right'></i></div>
+            </div>
+          ))}
+        </div>
+        <div className='dots'>
+          {this.props.imageUrl.map((image, index) => (
+            <i id={index} key={index} onClick={this.dotClick} className={this.state.currentImgIndex === index ? 'fas fa-circle' : 'far fa-circle'}></i>
+          ))}
+        </div>
       </div>
     );
   }
