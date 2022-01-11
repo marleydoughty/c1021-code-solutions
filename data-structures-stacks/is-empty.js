@@ -1,7 +1,8 @@
 /* exported isEmpty */
 
 function isEmpty(stack) {
-  if (stack.length <= 0) {
+  if (stack.peek() === undefined) {
     return true;
-  } return false;
+  }
+  return false;
 }
