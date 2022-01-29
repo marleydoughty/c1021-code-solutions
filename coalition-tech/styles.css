@@ -3,9 +3,11 @@
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
-  background-image: url(images/background-image.png);
   font-family: 'Poppins', sans-serif;
   font-family: 'PT Sans Narrow', sans-serif;
+  background-image: url(images/background-image.png);
+  background-size: auto 900px;
+  background-position: 70% 0;
 }
 
 .history-page {
@@ -13,9 +15,26 @@
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
-  background-image: url(images/peak.png);
   font-family: 'Poppins', sans-serif;
   font-family: 'PT Sans Narrow', sans-serif;
+  background-image: url(images/peak.png);
+  background-size: cover;
+  background-position: center 100%;
+}
+
+.history-page > .background {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(100, 100, 255, 0.1), rgba(0, 0, 255, 0.1));
+}
+
+.history-page > *:not(.background) {
+  z-index: 1;
+  position: relative;
 }
 
 .climb-page {
@@ -260,4 +279,6 @@ h3 {
 
 .home-page-mtn {
   color: rgb(58, 58, 122);
+  margin-top: -35px;
+  letter-spacing: 2px;
 }
