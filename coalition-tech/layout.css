@@ -1,0 +1,21 @@
+.hidden {
+  display: none !important;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.container {
+  max-width: 700px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

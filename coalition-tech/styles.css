@@ -1,0 +1,233 @@
+.home-page {
+  background-image: url(images/background-image.png);
+  background-size: cover;
+}
+
+.history-page {
+  background-image: url(images/peak.png);
+  background-size: cover;
+  z-index: 2;
+  position: relative;
+}
+
+.climb-page {
+  background-image: url(images/photo-1417021423914-070979c8eb34.png);
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  margin-top: 15px;
+  font-style: italic;
+}
+
+.top-nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-nav-bar {
+  background-color: white;
+  padding: 10px 10px;
+  height: 48px;
+}
+
+.climb.bottom-nav-bar {
+  background-color: rgba(59, 59, 88);
+}
+
+.climb-nav-bar {
+  background-color: rgba(59, 59, 88);
+  height: 30px;
+  color: lightgrey;
+}
+
+.top-nav-bar a {
+  color: white;
+  margin-right: 30px;
+  text-decoration: none;
+  border-bottom: solid thin;
+}
+
+.bottom-links {
+  display: flex;
+  font-style: italic;
+}
+
+.bottom-links a {
+  color: rgb(11, 11, 94);
+  margin-right: 30px;
+  text-decoration: none;
+  border-bottom: solid thin;
+}
+
+.LA {
+  margin-left: 5px;
+}
+
+.la,
+.bottom-la {
+  line-height: 0.5;
+}
+
+.mtn {
+  color: rgb(11, 11, 94);
+  font-size: 17px;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(44, 44, 71, 0.856);
+  padding: 10px 10px;
+  height: 195px;
+}
+
+.carousel-images {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-circles i {
+  margin: 5px 5px 0 5px;
+  font-size: 10px;
+}
+
+.mtn-icon img {
+  width: 40px;
+  border-radius: 50%;
+  border: solid thin grey;
+}
+
+.bottom-mtn-icon img {
+  border-radius: 50%;
+}
+
+.carousel-container img {
+  padding: 5px;
+  border-radius: 0%;
+}
+
+.climb-header {
+  background-color: white;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.history-content {
+  margin-left: 30px;
+  color: rgb(102, 91, 91);
+  line-height: 1.5;
+}
+
+.number-period {
+  display: flex;
+  flex-direction: column;
+  margin-top: 27px;
+}
+
+.number-period i {
+  color: rgba(40, 41, 64, 0.336);
+}
+
+.climb-header i {
+  color: rgba(102, 91, 91, 0.459);
+}
+
+.climb-nav-bar nav {
+  padding: 5px;
+}
+
+.climb-nav-bar nav:hover {
+  background-color: lightgray;
+  color: rgba(59, 59, 88, 0.726);
+}
+
+.dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.schedule {
+  height: 155px;
+  width: 250px;
+  background-color: white;
+  border-radius: 4px;
+  opacity: 75%;
+  padding: 0 20px 0 20px;
+  margin-top: 50px;
+}
+
+.climb-content {
+  margin-left: 15px;
+  color: grey;
+}
+
+.climb.bottom-nav-bar .mtn,
+.bottom-la,
+.copywright,
+.bottom-mtn-icon {
+  color: white;
+  opacity: 40%;
+}
+
+.mtn-nav {
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.copywright {
+  font-size: 12px;
+}
+
+.la-banner {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 75px;
+}
+
+.home-page-la {
+  color: rgb(41, 46, 16);
+}
+
+.home-page-mtn {
+  color: rgb(58, 58, 122);
+  letter-spacing: 2px;
+  line-height: 0.25;
+}
+
+.carousel-circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 100px;
+  color: rgba(40, 41, 64, 0.322);
+  margin: 0;
+}
+
+h2 {
+  color: rgb(34, 34, 63);
+  margin-bottom: 3px;
+}
+
+h3 {
+  font-size: 27px;
+  color: rgba(44, 44, 71);
+  margin: 0;
+}
